@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*** light mode ***/
+
+html{
+
+    /***Custom properties***/
+
+    --color-primary:#333;
+    --color-secondary:#fff;
+    --color-secondary-m:hsla(0,0%,100%,.5);
+}
+
+/*** dark mode ***/
+
+html[data-theme="dark"]{
+
+    /***Custom properties***/
+
+    --color-primary:#fff;
+    --color-secondary:#333;
+    --color-secondary-m:rgba(51,51,51,.5);
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    background-image: url(../image\ gallery/images/img6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    color: var(--color-primary);
+    transition: all .5s ease-in-out;
+    min-height: 100vh;
+}
+
+.toggle-container{
+    display: flex;
+    align-items: center;
+}
+
+/*** creating custom checkbox ***/
+
+input[type="checkbox"]{
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 35px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 20px;
+    margin: 50px;
+    outline: none;
+    transition: all .5s ease-in-out;
+}
+
+input:checked[type="checkbox"]{
+    background-color: #d3de32;
+}
+
+input:not(:checked)[type="checkbox"]{
+    background-color:#900d0d;
+}
+
+input[type="checkbox"]::before,input[type="checkbox"]::after{
+    content: "";
+    position: absolute;
+    top: 30%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    transition: all .5s ease-in-out;
+}
+
+input[type="checkbox"]::before{
+    left: .5rem;
+}
+
+input[type="checkbox"]::after{
+    right: .5rem;
+}
+
+input:checked[type="checkbox"]::before{
+    left: 37%;
+    box-shadow: none;
+}
+
+input:checked[type="checkbox"]::after{
+    right: 38%;
+    box-shadow: none;
+}
+
+/*** styling visible content ***/
+
+section{
+    padding: 50px;
+    background-color: var(--color-secondary-m);
+    transition: all .5s ease-in-out;
+}
+
+section h2{
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    font-size: 40px;
+    transition: all .5s ease-in-out;
+}
+
+section p{
+    color: var(--color-primary);
+    transition: all .5s ease-in-out;
+}
+
+html.transition,html.transition *,html.transition *::before,html.transition *::after{
+    transition: all .5s  !important;
+    transition-delay: 0 !important;
+}
