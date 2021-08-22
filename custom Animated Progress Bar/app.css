@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.progress{
+    background-color: #d8d8d8;
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.progress-done{
+    background-image: linear-gradient(135deg,#fff720 10%,#3cd500 90%);
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}

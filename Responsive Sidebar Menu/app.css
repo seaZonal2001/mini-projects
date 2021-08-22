@@ -1,0 +1,123 @@
+*, *::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../image\ gallery/images/img3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main-nav{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.toggle-btn{
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* background-color: red; */
+}
+
+.toggle-btn div{
+    height: 4px;
+    width: 25px;
+    background-color: white;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.toggle-btn div::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 4px;
+    width: 40px;
+    background-color: white;
+    transition: all .3s ease-in-out;
+}
+.toggle-btn div::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    height: 4px;
+    width: 40px;
+    background-color: white;
+    transition: all .3s ease-in-out;
+}
+
+.toggle-btn.open div{
+    background: transparent;
+}
+
+.toggle-btn.open div::before{
+    transform: rotate(405deg) translateY(4px);
+}
+
+.toggle-btn.open div::after{
+    transform: rotate(-405deg) translate(20px,-4px);
+}
+
+.main-header{
+    background-color: #4c4c80;
+    width: 50px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    z-index: 10;
+}
+
+.main-header.open{
+    width: 350px;
+}
+
+.main-header.open ul{
+    opacity: 1;
+    z-index: 10;
+    pointer-events: all;
+}
+
+.main-header ul{
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+
+.main-header ul li{
+    list-style: none;
+    margin: 10vh 0;
+}
+
+.main-header ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+.overlay.open{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    transition: all .3s ease-in-out;
+    z-index: 5;
+    background-color: hsla(201,16%,35%,.7);
+}
