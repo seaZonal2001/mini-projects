@@ -1,0 +1,149 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6;
+  background-image: linear-gradient(to bottom,black,white);
+}
+
+.container{
+  width: 1400px;
+  height: 700px;
+  position: relative;
+}
+
+.start h1{
+  font-weight: 100;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-59%,-50%);
+  cursor: pointer;
+  background-color: black;
+  padding: .2rem 1.5rem;
+  color: white;
+  border-radius: 30px;
+  user-select: none;
+}
+
+.quiz{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 20px;
+  
+  visibility: hidden;
+}
+
+.quiz >*{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question{
+  font-size: 35px;
+  letter-spacing: 2px;
+  background-color: rgba(247, 247, 247, .7);
+  align-self: center;
+  padding: 15px 30px;
+  text-align: center;
+}
+
+.choices{
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.choice{
+  cursor: pointer;
+  background-color: rgba(27, 118, 141, .7);
+  padding: 7px 15px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  height: 100px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer{
+  align-self: flex-end;
+  flex-direction: column;
+}
+
+.counter{
+  font-size: 50px;
+  color: rgb(247, 6, 58);
+}
+.time-gauge-bg,.time-gauge{
+  position: absolute;
+  top: 78%;
+  left: 22%;
+}
+
+.time-gauge-bg{
+  background-color: lightgray;
+  height: 10px;
+  width: 800px;
+  border-radius: 5px;
+}
+
+.time-gauge{
+  height: 10px;
+  background-color: rgb(247, 6, 58);
+  border-radius: 5px;
+}
+
+.progress-box{
+  height: 30px;
+  width: 30px;
+  background-color: lightgray;
+  margin-left: 15px;
+  border-radius: 50%;
+}
+
+.score-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .7);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 50px 100px;
+
+  visibility: hidden;
+}
+
+.score-container{
+  font-size: 30px;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  
+}
